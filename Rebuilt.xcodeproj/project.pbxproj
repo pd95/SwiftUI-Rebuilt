@@ -17,6 +17,8 @@
 		177AC26025FE3A49007EAE49 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC24725FE3A46007EAE49 /* Persistence.swift */; };
 		177AC26125FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
 		177AC26225FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
+		177AC27125FE3CBF007EAE49 /* ContentViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */; };
+		177AC27425FE3CC2007EAE49 /* ContentViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +27,13 @@
 		177AC24625FE3A46007EAE49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		177AC24725FE3A46007EAE49 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		177AC24825FE3A49007EAE49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		177AC24D25FE3A49007EAE49 /* Rebuilt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebuilt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		177AC24D25FE3A49007EAE49 /* Rebuilt in SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rebuilt in SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177AC25025FE3A49007EAE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		177AC25525FE3A49007EAE49 /* Rebuilt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebuilt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		177AC25525FE3A49007EAE49 /* Rebuilt in SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rebuilt in SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177AC25725FE3A49007EAE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177AC25825FE3A49007EAE49 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
+		177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +79,8 @@
 		177AC24E25FE3A49007EAE49 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				177AC24D25FE3A49007EAE49 /* Rebuilt.app */,
-				177AC25525FE3A49007EAE49 /* Rebuilt.app */,
+				177AC24D25FE3A49007EAE49 /* Rebuilt in SwiftUI.app */,
+				177AC25525FE3A49007EAE49 /* Rebuilt in SwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				177AC25025FE3A49007EAE49 /* Info.plist */,
+				177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				177AC25725FE3A49007EAE49 /* Info.plist */,
+				177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */,
 				177AC25825FE3A49007EAE49 /* macOS.entitlements */,
 			);
 			path = macOS;
@@ -115,7 +121,7 @@
 			);
 			name = "Rebuilt (iOS)";
 			productName = "Rebuilt (iOS)";
-			productReference = 177AC24D25FE3A49007EAE49 /* Rebuilt.app */;
+			productReference = 177AC24D25FE3A49007EAE49 /* Rebuilt in SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		177AC25425FE3A49007EAE49 /* Rebuilt (macOS) */ = {
@@ -132,7 +138,7 @@
 			);
 			name = "Rebuilt (macOS)";
 			productName = "Rebuilt (macOS)";
-			productReference = 177AC25525FE3A49007EAE49 /* Rebuilt.app */;
+			productReference = 177AC25525FE3A49007EAE49 /* Rebuilt in SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177AC27425FE3CC2007EAE49 /* ContentViewWrapper.swift in Sources */,
 				177AC25925FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				177AC25F25FE3A49007EAE49 /* Persistence.swift in Sources */,
 				177AC25B25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
@@ -206,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177AC27125FE3CBF007EAE49 /* ContentViewWrapper.swift in Sources */,
 				177AC25A25FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				177AC26025FE3A49007EAE49 /* Persistence.swift in Sources */,
 				177AC25C25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
@@ -270,6 +278,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Rebuilt in SwiftUI";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -322,6 +331,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Rebuilt in SwiftUI";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -342,7 +352,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Rebuilt;
-				PRODUCT_NAME = Rebuilt;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,7 +373,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Rebuilt;
-				PRODUCT_NAME = Rebuilt;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -390,7 +398,6 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Rebuilt;
-				PRODUCT_NAME = Rebuilt;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -414,7 +421,6 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Rebuilt;
-				PRODUCT_NAME = Rebuilt;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
