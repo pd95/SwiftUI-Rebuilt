@@ -34,6 +34,7 @@
 		177AC25825FE3A49007EAE49 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
 		177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
+		177AC27725FE3E6C007EAE49 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		177AC23D25FE3A46007EAE49 = {
 			isa = PBXGroup;
 			children = (
+				177AC27725FE3E6C007EAE49 /* README.md */,
 				177AC24225FE3A46007EAE49 /* Shared */,
 				177AC24F25FE3A49007EAE49 /* iOS */,
 				177AC25625FE3A49007EAE49 /* macOS */,
