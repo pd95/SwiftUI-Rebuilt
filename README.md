@@ -6,3 +6,10 @@ It's not about cloning the functionality, but to try to use the standard SwiftUI
 This project is about learning to apply SwiftUI.
 
 There are screens going to be build for macOS and iOS. But not necessarily for both.
+
+## iOS Music App UI clone
+
+- "Listen Now" screen clone with "Top Picks" and "Recently Played"
+- No interaction except scrolling
+
+!["Listen Now" screen](iOS/Music/Screencasts/RocketSim4_iPhone_Listen_Now.gif)

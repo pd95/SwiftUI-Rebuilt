@@ -68,7 +68,6 @@
 		176865112603C86500ED195F /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				1768651C2603CA4900ED195F /* Screenshots */,
 				1768651F2603CC1F00ED195F /* MusicApp.swift */,
 				176865312603F26600ED195F /* ListenNow.swift */,
 				176865292603DB0100ED195F /* FeatureCard.swift */,
@@ -76,13 +75,6 @@
 				176865252603DA3200ED195F /* MusicApp.xcassets */,
 			);
 			path = Music;
-			sourceTree = "<group>";
-		};
-		1768651C2603CA4900ED195F /* Screenshots */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		177AC23D25FE3A46007EAE49 = {
