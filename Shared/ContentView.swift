@@ -9,20 +9,34 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
+    
+    enum PrototypeUI {
+        case musicApp
+    }
+    
+    @State private var currentUI: PrototypeUI? = .musicApp
+    
     var body: some View {
-        VStack {
-            Text("Rebuilt UIs")
-                .font(.largeTitle)
-            
-            Text("Choose an app/UI:")
-            
-            HStack {
-                Button("Placeholder") {
+        Group {
+            switch currentUI {
+            case .musicApp:
+                MusicApp(dismiss: { currentUI = nil })
+            default:
+                VStack {
+                    Text("Choose an app/UI:")
+                        .font(.title)
+                    
+                    HStack {
+                        Button("Music App") {
+                            currentUI = .musicApp
+                        }
+                    }
+                    .padding()
                 }
+                .padding()
+                .navigationTitle("Rebuilt UIs")
             }
         }
-        .padding()
     }
 }
 
