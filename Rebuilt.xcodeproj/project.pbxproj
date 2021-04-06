@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */; };
+		173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B4261CF3D400889AA7 /* VisualEffectView.swift */; };
 		176865202603CC1F00ED195F /* MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768651F2603CC1F00ED195F /* MusicApp.swift */; };
 		176865262603DA3200ED195F /* MusicApp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176865252603DA3200ED195F /* MusicApp.xcassets */; };
 		1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176865292603DB0100ED195F /* FeatureCard.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAudioPlayer.swift; sourceTree = "<group>"; };
+		173520B4261CF3D400889AA7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		1768651F2603CC1F00ED195F /* MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApp.swift; sourceTree = "<group>"; };
 		176865252603DA3200ED195F /* MusicApp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MusicApp.xcassets; sourceTree = "<group>"; };
 		176865292603DB0100ED195F /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				1768651F2603CC1F00ED195F /* MusicApp.swift */,
+				173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */,
 				176865312603F26600ED195F /* ListenNow.swift */,
 				176865292603DB0100ED195F /* FeatureCard.swift */,
 				1768652D2603E7C700ED195F /* AlbumCard.swift */,
@@ -94,6 +99,7 @@
 				177AC24525FE3A46007EAE49 /* RebuiltApp.swift */,
 				177AC24625FE3A46007EAE49 /* ContentView.swift */,
 				177AC24725FE3A46007EAE49 /* Persistence.swift */,
+				173520B4261CF3D400889AA7 /* VisualEffectView.swift */,
 				177AC24825FE3A49007EAE49 /* Assets.xcassets */,
 				177AC24325FE3A46007EAE49 /* Rebuilt.xcdatamodeld */,
 			);
@@ -227,11 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */,
 				177AC27425FE3CC2007EAE49 /* ContentViewWrapper.swift in Sources */,
 				177AC25925FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */,
 				177AC25F25FE3A49007EAE49 /* Persistence.swift in Sources */,
 				176865202603CC1F00ED195F /* MusicApp.swift in Sources */,
+				173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */,
 				1768652E2603E7C700ED195F /* AlbumCard.swift in Sources */,
 				177AC25B25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
 				176865322603F26600ED195F /* ListenNow.swift in Sources */,

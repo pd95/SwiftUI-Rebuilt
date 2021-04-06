@@ -51,6 +51,10 @@ struct ListenNow: View {
                     recentlyPlayed
                 }
             }
+            .overlay(
+                MiniAudioPlayer(currentlyPlaying: .example)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+            )
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarTitle(navBarTitle)
