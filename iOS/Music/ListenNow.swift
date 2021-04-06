@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ListenNow: View {
     @State private var navBarTitle: String = ""
+    @State private var currentlyPlaying: PlayingSong? = .example
     
     var body: some View {
-        VStack {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 8) {
                     HStack {
@@ -49,16 +50,28 @@ struct ListenNow: View {
                     topPicks
                     
                     recentlyPlayed
+
+                    if currentlyPlaying != nil {
+                        Spacer(minLength: 40)
+                            .layoutPriority(-1)
+                    }
                 }
             }
             .overlay(
-                MiniAudioPlayer(currentlyPlaying: .example)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+                Group {
+                    if let currentlyPlaying = currentlyPlaying {
+                        MiniAudioPlayer(currentlyPlaying: currentlyPlaying)
+                            .onTapGesture(perform: toggleMiniPlayer)
+                            .frame(maxHeight: .infinity, alignment: .bottom)
+                    }
+                }
             )
+
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle(navBarTitle)
+            .navigationBarHidden(navBarTitle.isEmpty)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarTitle(navBarTitle)
-        .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     var topPicks: some View {
@@ -72,6 +85,7 @@ struct ListenNow: View {
                 HStack(spacing: 10) {
                     ForEach(FeaturePick.topPicks) { pick in
                         FeatureCard(pick)
+                            .onTapGesture(perform: toggleMiniPlayer)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -94,6 +108,7 @@ struct ListenNow: View {
                 HStack(spacing: 10) {
                     ForEach(Album.recentlyPlayed) { album in
                         AlbumCard(album)
+                            .onTapGesture(perform: toggleMiniPlayer)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -102,6 +117,11 @@ struct ListenNow: View {
         .padding(.vertical, 14)
     }
     
+    func toggleMiniPlayer() {
+        withAnimation {
+            currentlyPlaying = currentlyPlaying == nil ? .example : nil
+        }
+    }
 }
 
 struct ListenNow_Previews: PreviewProvider {

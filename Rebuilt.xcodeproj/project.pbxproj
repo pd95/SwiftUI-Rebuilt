@@ -10,6 +10,7 @@
 		173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */; };
 		173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B4261CF3D400889AA7 /* VisualEffectView.swift */; };
 		173520B9261CF73700889AA7 /* MusicAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B8261CF73700889AA7 /* MusicAppDataModel.swift */; };
+		173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520BE261D067E00889AA7 /* View+OS-Modifier.swift */; };
 		176865202603CC1F00ED195F /* MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768651F2603CC1F00ED195F /* MusicApp.swift */; };
 		176865262603DA3200ED195F /* MusicApp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176865252603DA3200ED195F /* MusicApp.xcassets */; };
 		1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176865292603DB0100ED195F /* FeatureCard.swift */; };
@@ -25,14 +26,13 @@
 		177AC26025FE3A49007EAE49 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC24725FE3A46007EAE49 /* Persistence.swift */; };
 		177AC26125FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
 		177AC26225FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
-		177AC27125FE3CBF007EAE49 /* ContentViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */; };
-		177AC27425FE3CC2007EAE49 /* ContentViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAudioPlayer.swift; sourceTree = "<group>"; };
 		173520B4261CF3D400889AA7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		173520B8261CF73700889AA7 /* MusicAppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppDataModel.swift; sourceTree = "<group>"; };
+		173520BE261D067E00889AA7 /* View+OS-Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OS-Modifier.swift"; sourceTree = "<group>"; };
 		1768651F2603CC1F00ED195F /* MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApp.swift; sourceTree = "<group>"; };
 		176865252603DA3200ED195F /* MusicApp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MusicApp.xcassets; sourceTree = "<group>"; };
 		176865292603DB0100ED195F /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -48,8 +48,6 @@
 		177AC25525FE3A49007EAE49 /* Rebuilt in SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rebuilt in SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177AC25725FE3A49007EAE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177AC25825FE3A49007EAE49 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
-		177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWrapper.swift; sourceTree = "<group>"; };
 		177AC27725FE3E6C007EAE49 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +101,7 @@
 				177AC24625FE3A46007EAE49 /* ContentView.swift */,
 				177AC24725FE3A46007EAE49 /* Persistence.swift */,
 				173520B4261CF3D400889AA7 /* VisualEffectView.swift */,
+				173520BE261D067E00889AA7 /* View+OS-Modifier.swift */,
 				177AC24825FE3A49007EAE49 /* Assets.xcassets */,
 				177AC24325FE3A46007EAE49 /* Rebuilt.xcdatamodeld */,
 			);
@@ -122,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				177AC25025FE3A49007EAE49 /* Info.plist */,
-				177AC26F25FE3CB1007EAE49 /* ContentViewWrapper.swift */,
 				176865112603C86500ED195F /* Music */,
 			);
 			path = iOS;
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				177AC25725FE3A49007EAE49 /* Info.plist */,
-				177AC27025FE3CBB007EAE49 /* ContentViewWrapper.swift */,
 				177AC25825FE3A49007EAE49 /* macOS.entitlements */,
 			);
 			path = macOS;
@@ -237,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */,
-				177AC27425FE3CC2007EAE49 /* ContentViewWrapper.swift in Sources */,
 				177AC25925FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				173520B9261CF73700889AA7 /* MusicAppDataModel.swift in Sources */,
 				1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */,
@@ -245,6 +241,7 @@
 				176865202603CC1F00ED195F /* MusicApp.swift in Sources */,
 				173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */,
 				1768652E2603E7C700ED195F /* AlbumCard.swift in Sources */,
+				173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */,
 				177AC25B25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
 				176865322603F26600ED195F /* ListenNow.swift in Sources */,
 				177AC25D25FE3A49007EAE49 /* ContentView.swift in Sources */,
@@ -255,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177AC27125FE3CBF007EAE49 /* ContentViewWrapper.swift in Sources */,
 				177AC25A25FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				177AC26025FE3A49007EAE49 /* Persistence.swift in Sources */,
 				177AC25C25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,

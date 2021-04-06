@@ -13,10 +13,8 @@ struct RebuiltApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentViewWrapper {
-                ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            }
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

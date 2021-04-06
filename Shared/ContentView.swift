@@ -35,6 +35,12 @@ struct ContentView: View {
                 }
                 .padding()
                 .navigationTitle("Rebuilt UIs")
+                .iOS { view in
+                    NavigationView {
+                        view
+                    }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                }
             }
         }
     }

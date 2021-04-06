@@ -25,7 +25,6 @@ struct MusicApp: View {
                 .tabItem { Label("Search", systemImage: "magnifyingglass") }
         }
         .accentColor(.red)
-        .navigationBarHidden(true)
     }
 }
 
