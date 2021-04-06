@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct PlayingSong {
-    let song: String
-    let album: String
-    let singer: String
-    let position: Double
-    let duration: Double
-    let audioLevel: Double
-    let imageName: String
-
-    static let example = PlayingSong(song: "On n'a qu'une terre", album: "On n'a qu'une terre - Single", singer: "Stress", position: 21, duration: 188, audioLevel: 0.3, imageName: "OnNAQuUneTerre")
-}
-
 struct MiniAudioPlayer: View {
     let currentlyPlaying: PlayingSong
     

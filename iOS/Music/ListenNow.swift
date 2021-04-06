@@ -70,9 +70,9 @@ struct ListenNow: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    FeatureCard(title: "Featuring Alan Walker", subtitle: "Alan Walker & Similar Artists\nStation", text: nil, color: Color(#colorLiteral(red: 0.1098039216, green: 0.1568734348, blue: 0.1333114803, alpha: 1)), imageName: "AlanWalker")
-                    FeatureCard(title: "Take a Load Off", subtitle: "Acoustic Hits", text: "Pop hits stripped to their bare,\nbeautiful essentials.", color: Color(#colorLiteral(red: 0.7372552752, green: 0.3804122806, blue: 0.2196018994, alpha: 1)), imageName: "AcousticHits")
-                    FeatureCard(title: "Featuring Bruno Mars", subtitle: "Pure Romance", text: "Sparks fly in our all-time\nfavourite love songs.", color: Color(#colorLiteral(red: 0.7882060409, green: 0.6078792214, blue: 0.6469835639, alpha: 1)), imageName: "PureRomance")
+                    ForEach(FeaturePick.topPicks) { pick in
+                        FeatureCard(pick)
+                    }
                 }
                 .padding(.horizontal, 20)
             }
@@ -92,9 +92,9 @@ struct ListenNow: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    AlbumCard(title: "2010s Hits Essentials", subtitle: "10s", imageName: "2010sHits")
-                    AlbumCard(title: "Acoustic Hits", subtitle: "Apple Music Pop", imageName: "AcousticHits")
-                    AlbumCard(title: "Pure Romance", subtitle: "Apple Music Pop", imageName: "PureRomance")
+                    ForEach(Album.recentlyPlayed) { album in
+                        AlbumCard(album)
+                    }
                 }
                 .padding(.horizontal, 20)
             }

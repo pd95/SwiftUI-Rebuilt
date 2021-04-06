@@ -13,7 +13,15 @@ struct FeatureCard: View {
     let text: String?
     let color: Color
     let imageName: String
-
+    
+    init(_ pick: FeaturePick) {
+        title = pick.title
+        subtitle = pick.subtitle
+        text = pick.text
+        color = pick.color
+        imageName = pick.imageName
+    }
+    
     var body: some View {
         VStack {
             Text(title)
@@ -62,9 +70,9 @@ struct FeatureCard: View {
 struct FeatureCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FeatureCard(title: "Featuring Alan Walker", subtitle: "Alan Walker & Similar Artists\nStation", text: nil, color: Color(#colorLiteral(red: 0.1098039216, green: 0.1568734348, blue: 0.1333114803, alpha: 1)), imageName: "AlanWalker")
-            FeatureCard(title: "Take a Load Off", subtitle: "Acoustic Hits", text: "Pop hits stripped to their bare,\nbeautiful essentials.", color: Color(#colorLiteral(red: 0.7372552752, green: 0.3804122806, blue: 0.2196018994, alpha: 1)), imageName: "AcousticHits")
-            FeatureCard(title: "Featuring Bruno Mars", subtitle: "Pure Romance", text: "Sparks fly in our all-time\nfavourite love songs.", color: Color(#colorLiteral(red: 0.7882060409, green: 0.6078792214, blue: 0.6469835639, alpha: 1)), imageName: "PureRomance")
+            FeatureCard(FeaturePick.topPicks[0])
+            FeatureCard(FeaturePick.topPicks[1])
+            FeatureCard(FeaturePick.topPicks[2])
         }
         .padding()
         .previewLayout(.sizeThatFits)

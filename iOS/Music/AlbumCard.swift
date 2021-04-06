@@ -11,6 +11,12 @@ struct AlbumCard: View {
     let title: String
     let subtitle: String
     let imageName: String
+    
+    init(_ album: Album) {
+        title = album.title
+        subtitle = album.subtitle
+        imageName = album.imageName
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,14 +25,14 @@ struct AlbumCard: View {
             Text(subtitle)
                 .font(.caption2)
                 .foregroundColor(.secondary)
-            
         }
+        .frame(width: 164)
     }
 
     var albumImage: some View {
         Image(imageName)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: .fill)
             .frame(width: 163, height: 163, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
@@ -35,9 +41,10 @@ struct AlbumCard: View {
 struct AlbumCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AlbumCard(title: "2010s Hits Essentials", subtitle: "10s", imageName: "2010sHits")
-            AlbumCard(title: "Acoustic Hits", subtitle: "Apple Music Pop", imageName: "AcousticHits")
-            AlbumCard(title: "Pure Romance", subtitle: "Apple Music Pop", imageName: "PureRomance")
+            AlbumCard(Album.recentlyPlayed[0])
+            AlbumCard(Album.recentlyPlayed[1])
+            AlbumCard(Album.recentlyPlayed[2])
+            AlbumCard(Album.recentlyPlayed[3])
         }
         .padding()
         .previewLayout(.sizeThatFits)
