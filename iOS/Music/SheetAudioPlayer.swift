@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct SheetAudioPlayer: View {
-    let currentlyPlaying: PlayingSong
-    let toggleMiniPlayer: () -> Void
+    @EnvironmentObject var playerState: AudioPlayerViewModel
 
-    @State private var playing = true
+    let currentlyPlaying: PlayingSong
     
 
     var body: some View {
         VStack {
-            
-            Button(action: toggleMiniPlayer) {
+
+            Button(action: playerState.toggleMiniPlayer) {
                 Image(systemName: "minus")
                     .imageScale(.large)
                     .frame(minWidth: 40, minHeight: 40)
-                    .font(.system(size: 40, weight: .bold))
+                    .font(.system(size: 40, weight: .medium))
                     .foregroundColor(.secondary)
             }
 
@@ -61,11 +60,12 @@ struct SheetAudioPlayer: View {
                         .font(.title)
                 }
                 
-                Button(action: {}) {
-                    Image(systemName: playing ? "pause.fill" : "play.fill")
+                Button(action: playerState.togglePlayPause) {
+                    Image(systemName: playerState.playing ? "pause.fill" : "play.fill")
                         .renderingMode(.original)
                         .imageScale(.large)
-                        .frame(minWidth: 40, minHeight: 40)
+                        .frame(minWidth: 50, minHeight: 50)
+                        .aspectRatio(contentMode: .fill)
                         .font(.largeTitle)
                 }
                 Button(action: {}) {
@@ -87,6 +87,7 @@ struct SheetAudioPlayer: View {
 
 struct SheetAudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        SheetAudioPlayer(currentlyPlaying: .example, toggleMiniPlayer: {})
+        SheetAudioPlayer(currentlyPlaying: .example)
+            .environmentObject(AudioPlayerViewModel(song: .example, fullscreenPlayer: true))
     }
 }

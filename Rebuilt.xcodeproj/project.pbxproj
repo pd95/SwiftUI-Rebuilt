@@ -11,6 +11,7 @@
 		173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B4261CF3D400889AA7 /* VisualEffectView.swift */; };
 		173520B9261CF73700889AA7 /* MusicAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B8261CF73700889AA7 /* MusicAppDataModel.swift */; };
 		173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520BE261D067E00889AA7 /* View+OS-Modifier.swift */; };
+		1754EBB6261E11AE0016F2D0 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754EBB5261E11AE0016F2D0 /* AudioPlayerViewModel.swift */; };
 		176865202603CC1F00ED195F /* MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768651F2603CC1F00ED195F /* MusicApp.swift */; };
 		176865262603DA3200ED195F /* MusicApp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176865252603DA3200ED195F /* MusicApp.xcassets */; };
 		1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176865292603DB0100ED195F /* FeatureCard.swift */; };
@@ -35,6 +36,7 @@
 		173520B4261CF3D400889AA7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		173520B8261CF73700889AA7 /* MusicAppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppDataModel.swift; sourceTree = "<group>"; };
 		173520BE261D067E00889AA7 /* View+OS-Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OS-Modifier.swift"; sourceTree = "<group>"; };
+		1754EBB5261E11AE0016F2D0 /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
 		1768651F2603CC1F00ED195F /* MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApp.swift; sourceTree = "<group>"; };
 		176865252603DA3200ED195F /* MusicApp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MusicApp.xcassets; sourceTree = "<group>"; };
 		176865292603DB0100ED195F /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				1768651F2603CC1F00ED195F /* MusicApp.swift */,
 				173520B8261CF73700889AA7 /* MusicAppDataModel.swift */,
+				1754EBB5261E11AE0016F2D0 /* AudioPlayerViewModel.swift */,
 				176865312603F26600ED195F /* ListenNow.swift */,
 				178908CB261E00D900DA857E /* AudioPlayer.swift */,
 				173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */,
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */,
+				1754EBB6261E11AE0016F2D0 /* AudioPlayerViewModel.swift in Sources */,
 				177AC25925FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				173520B9261CF73700889AA7 /* MusicAppDataModel.swift in Sources */,
 				178908D0261E029C00DA857E /* SheetAudioPlayer.swift in Sources */,

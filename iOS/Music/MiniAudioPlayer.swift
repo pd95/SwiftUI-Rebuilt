@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MiniAudioPlayer: View {
+    @EnvironmentObject var playerState: AudioPlayerViewModel
+
     let currentlyPlaying: PlayingSong
-    let toggleMiniPlayer: () -> Void
 
     var body: some View {
         HStack {
@@ -24,8 +25,8 @@ struct MiniAudioPlayer: View {
             Text(currentlyPlaying.song)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: {}) {
-                Image(systemName: "play.fill")
+            Button(action: playerState.togglePlayPause) {
+                Image(systemName: playerState.playing ? "pause.fill" : "play.fill")
                     .renderingMode(.original)
                     .imageScale(.large)
                     .frame(minWidth: 40, minHeight: 40)
@@ -39,12 +40,13 @@ struct MiniAudioPlayer: View {
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: 64)
-        .onTapGesture(perform: toggleMiniPlayer)
+        .onTapGesture(perform: playerState.toggleMiniPlayer)
     }
 }
 
 struct MiniAudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniAudioPlayer(currentlyPlaying: .example,toggleMiniPlayer: {})
+        MiniAudioPlayer(currentlyPlaying: .example)
+            .environmentObject(AudioPlayerViewModel(song: .example, fullscreenPlayer: false))
     }
 }

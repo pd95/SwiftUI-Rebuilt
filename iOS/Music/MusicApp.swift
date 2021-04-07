@@ -10,6 +10,8 @@ import SwiftUI
 struct MusicApp: View {
     let dismiss: () -> Void
     
+    @StateObject var playerState = AudioPlayerViewModel()
+    
     var body: some View {
         TabView {
             ListenNow()
@@ -25,6 +27,7 @@ struct MusicApp: View {
                 .tabItem { Label("Search", systemImage: "magnifyingglass") }
         }
         .accentColor(.red)
+        .environmentObject(playerState)
     }
 }
 

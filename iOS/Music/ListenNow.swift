@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ListenNow: View {
+    @EnvironmentObject var audioPlayer: AudioPlayerViewModel
+
     @State private var navBarTitle: String = ""
-    @State private var currentlyPlaying: PlayingSong? = .example
-    @State private var showingMiniPlayer = true
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -52,19 +52,14 @@ struct ListenNow: View {
                     
                     recentlyPlayed
 
-                    if currentlyPlaying != nil {
+                    if audioPlayer.currentSong != nil {
                         Spacer(minLength: 40)
                             .layoutPriority(-1)
                     }
                 }
             }
             .overlay(
-                Group {
-                    if let currentlyPlaying = currentlyPlaying {
-                        AudioPlayer(currentlyPlaying: currentlyPlaying, showMiniPlayer: $showingMiniPlayer)
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                    }
-                }
+                AudioPlayer()
             )
 
             .navigationBarTitleDisplayMode(.inline)
@@ -118,15 +113,13 @@ struct ListenNow: View {
     }
 
     func playSong() {
-        withAnimation {
-            currentlyPlaying = currentlyPlaying == nil ? .example : nil
-            showingMiniPlayer = true
-        }
+        audioPlayer.playSong(audioPlayer.currentSong == nil ? .example : nil)
     }
 }
 
 struct ListenNow_Previews: PreviewProvider {
     static var previews: some View {
         ListenNow()
+            .environmentObject(AudioPlayerViewModel(song: .example, fullscreenPlayer: false))
     }
 }
