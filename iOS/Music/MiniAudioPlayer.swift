@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MiniAudioPlayer: View {
     let currentlyPlaying: PlayingSong
-    
+    let toggleMiniPlayer: () -> Void
+
     var body: some View {
         HStack {
             Image(currentlyPlaying.imageName)
@@ -38,15 +39,12 @@ struct MiniAudioPlayer: View {
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: 64)
-        .background(
-            Color(.quaternarySystemFill)
-                .background(VisualEffectView(effect: UIBlurEffect(style: .systemMaterial)))
-        )
+        .onTapGesture(perform: toggleMiniPlayer)
     }
 }
 
 struct MiniAudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniAudioPlayer(currentlyPlaying: .example)
+        MiniAudioPlayer(currentlyPlaying: .example,toggleMiniPlayer: {})
     }
 }

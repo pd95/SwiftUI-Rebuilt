@@ -26,6 +26,8 @@
 		177AC26025FE3A49007EAE49 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177AC24725FE3A46007EAE49 /* Persistence.swift */; };
 		177AC26125FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
 		177AC26225FE3A49007EAE49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177AC24825FE3A49007EAE49 /* Assets.xcassets */; };
+		178908CC261E00D900DA857E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178908CB261E00D900DA857E /* AudioPlayer.swift */; };
+		178908D0261E029C00DA857E /* SheetAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178908CF261E029C00DA857E /* SheetAudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		177AC25725FE3A49007EAE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177AC25825FE3A49007EAE49 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		177AC27725FE3E6C007EAE49 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		178908CB261E00D900DA857E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		178908CF261E029C00DA857E /* SheetAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +79,9 @@
 				1768651F2603CC1F00ED195F /* MusicApp.swift */,
 				173520B8261CF73700889AA7 /* MusicAppDataModel.swift */,
 				176865312603F26600ED195F /* ListenNow.swift */,
+				178908CB261E00D900DA857E /* AudioPlayer.swift */,
 				173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */,
+				178908CF261E029C00DA857E /* SheetAudioPlayer.swift */,
 				176865292603DB0100ED195F /* FeatureCard.swift */,
 				1768652D2603E7C700ED195F /* AlbumCard.swift */,
 				176865252603DA3200ED195F /* MusicApp.xcassets */,
@@ -236,6 +242,7 @@
 				173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */,
 				177AC25925FE3A49007EAE49 /* Rebuilt.xcdatamodeld in Sources */,
 				173520B9261CF73700889AA7 /* MusicAppDataModel.swift in Sources */,
+				178908D0261E029C00DA857E /* SheetAudioPlayer.swift in Sources */,
 				1768652A2603DB0100ED195F /* FeatureCard.swift in Sources */,
 				177AC25F25FE3A49007EAE49 /* Persistence.swift in Sources */,
 				176865202603CC1F00ED195F /* MusicApp.swift in Sources */,
@@ -244,6 +251,7 @@
 				173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */,
 				177AC25B25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
 				176865322603F26600ED195F /* ListenNow.swift in Sources */,
+				178908CC261E00D900DA857E /* AudioPlayer.swift in Sources */,
 				177AC25D25FE3A49007EAE49 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

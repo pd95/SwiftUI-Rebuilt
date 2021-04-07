@@ -10,6 +10,7 @@ import SwiftUI
 struct ListenNow: View {
     @State private var navBarTitle: String = ""
     @State private var currentlyPlaying: PlayingSong? = .example
+    @State private var showingMiniPlayer = true
     
     var body: some View {
         NavigationView {
@@ -60,8 +61,7 @@ struct ListenNow: View {
             .overlay(
                 Group {
                     if let currentlyPlaying = currentlyPlaying {
-                        MiniAudioPlayer(currentlyPlaying: currentlyPlaying)
-                            .onTapGesture(perform: toggleMiniPlayer)
+                        AudioPlayer(currentlyPlaying: currentlyPlaying, showMiniPlayer: $showingMiniPlayer)
                             .frame(maxHeight: .infinity, alignment: .bottom)
                     }
                 }
@@ -85,7 +85,7 @@ struct ListenNow: View {
                 HStack(spacing: 10) {
                     ForEach(FeaturePick.topPicks) { pick in
                         FeatureCard(pick)
-                            .onTapGesture(perform: toggleMiniPlayer)
+                            .onTapGesture(perform: playSong)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -108,7 +108,7 @@ struct ListenNow: View {
                 HStack(spacing: 10) {
                     ForEach(Album.recentlyPlayed) { album in
                         AlbumCard(album)
-                            .onTapGesture(perform: toggleMiniPlayer)
+                            .onTapGesture(perform: playSong)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -116,10 +116,11 @@ struct ListenNow: View {
         }
         .padding(.vertical, 14)
     }
-    
-    func toggleMiniPlayer() {
+
+    func playSong() {
         withAnimation {
             currentlyPlaying = currentlyPlaying == nil ? .example : nil
+            showingMiniPlayer = true
         }
     }
 }
