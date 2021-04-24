@@ -19,12 +19,16 @@ struct AlbumCard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             albumImage
             Text(title)
+                .lineLimit(2)
+                .padding(.top, 6)
+                .padding(.bottom, 2)
             Text(subtitle)
                 .foregroundColor(.secondary)
         }
+        .font(.subheadline)
         .frame(width: 164)
     }
 

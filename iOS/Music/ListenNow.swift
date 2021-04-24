@@ -50,7 +50,15 @@ struct ListenNow: View {
 
                     topPicksHScroller
                     
-                    recentlyPlayedHScroller
+                    playableItemHScroller(title: "Recently Played", items: Playlist.recentlyPlayed)
+
+                    // List of albums for each genre
+                    ForEach(Array(Set(Album.all.values.map(\.genre))).sorted(), id: \.self) { genre in
+                        Divider()
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 6)
+                        playableItemHScroller(title: genre, items: Album.all.values.filter({ $0.genre == genre }).sorted(by: { $0.title < $1.title }))
+                    }
 
                     if audioPlayer.currentSong != nil {
                         Spacer(minLength: 40)
@@ -90,21 +98,23 @@ struct ListenNow: View {
         }
     }
 
-    var recentlyPlayedHScroller: some View {
-        VStack(alignment: .leading, spacing: 10) {
+    func playableItemHScroller(title: String, items: [PlayableItem]) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Recently Played")
+                Text(title)
                     .font(.title2)
                     .bold()
                 Spacer()
                 Button("See All", action: {})
+                    .opacity(items.count > 8 ? 1 : 0)
             }
             .padding(.horizontal, 20)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(Playlist.recentlyPlayed, id: \.id) { item in
+                    ForEach(items.prefix(8), id: \.id) { item in
                         AlbumCard(item)
+                            .frame(maxHeight: .infinity)
                             .onTapGesture(perform: {
                                 playSong(item)
                             })
@@ -113,11 +123,10 @@ struct ListenNow: View {
                 .padding(.horizontal, 20)
             }
         }
-        .padding(.vertical, 14)
     }
 
     func playSong(_ item: PlayableItem) {
-        audioPlayer.playSong(audioPlayer.currentSong == nil ? item.firstSong : nil)
+        audioPlayer.playSong(audioPlayer.currentSong != item.firstSong ? item.firstSong : nil)
     }
 }
 
