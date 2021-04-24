@@ -23,26 +23,38 @@ extension Song {
         .song(for: "For a Better Day", duration: 206, imageName: "Stories", album: .album(for: "Stories", genre: "Dance", year: 2015, imageName: "Stories", artist: .artist(for: "Avicii"))),
         .song(for: "The Nights", duration: 176, imageName: "DaysNights", album: .album(for: "The Days/Nights EP", genre: "Dance", year: 2014, imageName: "DaysNights", artist: .artist(for: "Avicii"))),
         .song(for: "The Days", duration: 278, imageName: "DaysNights", album: .album(for: "The Days/Nights EP", genre: "Dance", year: 2014, imageName: "DaysNights", artist: .artist(for: "Avicii"))),
+        .song(for: "2002 (Acoustic)", duration: 211, imageName: "2002Acoustic", album: .album(for: "2002 (Acoustic) - Single", genre: "Pop", year: 2018, imageName: "2002Acoustic", artist: .artist(for: "Anne-Marie"))),
+        .song(for: "All of Me", duration: 269, imageName: "LoveInTheFuture", album: .album(for: "Love in the Future (Expanded Edition)", genre: "R&B/Soul", year: 2013, imageName: "LoveInTheFuture", artist: .artist(for: "John Legend"))),
+        .song(for: "Photograph", duration: 258, imageName: "x", album: .album(for: "x (Deluxe Edition)", genre: "Pop", year: 2014, imageName: "x", artist: .artist(for: "Ed Sheeran"))),
     ]
 
     static let example: Song = mySongs.first!
 }
 
 extension Playlist {
-    static let myPlaylists: [Playlist] = [
-        .playlist(for: "Acoustic Hits", imageName: "PlaylistAcousticHits", artist: nil, curator: .curator(for: "Apple Music Pop"), songs: [.example]),
-        .playlist(for: "2010s Hits Essentials", imageName: "Playlist2010sHits", artist: nil, curator: .curator(for: "10s"), songs: [.example]),
-        .playlist(for: "Pure Romance", imageName: "PlaylistPureRomance", artist: nil, curator: .curator(for: "Apple Music Pop"), songs: [.example]),
-        .playlist(for: "2010er Singer-Songwriter Essentials", imageName: "Playlist2010SingerSongwriter", artist: nil, curator: .curator(for: "90s"), songs: [.example]),
-    ]
+    static let myPlaylists: [Playlist] = {
+        let _ = Song.example
+        return [
+            .playlist(for: "Acoustic Hits", imageName: "PlaylistAcousticHits", artist: nil, curator: .curator(for: "Apple Music Pop"), songs: [.song(for: "2002 (Acoustic)")!]),
+            .playlist(for: "2010s Hits Essentials", imageName: "Playlist2010sHits", artist: nil, curator: .curator(for: "10s"), songs: [.song(for: "Wake Me Up")!]),
+            .playlist(for: "Pure Romance", imageName: "PlaylistPureRomance", artist: nil, curator: .curator(for: "Apple Music Pop"), songs: [.song(for: "All of Me")!]),
+            .playlist(for: "2010er Singer-Songwriter Essentials", imageName: "Playlist2010SingerSongwriter", artist: nil, curator: .curator(for: "90s"), songs: [.song(for: "Photograph")!]),
+        ]
+    }()
 
     static let recentlyPlayed: [PlayableItem] = {
         let _ = myPlaylists
         return [
-            Album.album(for: "On n’a qu’une terre - Single")!,
             Playlist.playlist(for: "2010s Hits Essentials")!,
             Playlist.playlist(for: "Acoustic Hits")!,
             Playlist.playlist(for: "Pure Romance")!,
+            Album.album(for: "On n’a qu’une terre - Single")!,
+            Song.song(for: "Happier")!,
+            Song.song(for: "Spectre")!,
+            Song.song(for: "Alone")!,
+            Song.song(for: "Faded")!,
+            Song.song(for: "All of Me")!,
+            Song.song(for: "Photograph")!,
         ]
     }()
 }
