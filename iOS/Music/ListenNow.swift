@@ -48,9 +48,9 @@ struct ListenNow: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 2)
 
-                    topPicks
+                    topPicksHScroller
                     
-                    recentlyPlayed
+                    recentlyPlayedHScroller
 
                     if audioPlayer.currentSong != nil {
                         Spacer(minLength: 40)
@@ -69,7 +69,7 @@ struct ListenNow: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    var topPicks: some View {
+    var topPicksHScroller: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Top Picks")
                 .font(.title2)
@@ -80,7 +80,9 @@ struct ListenNow: View {
                 HStack(spacing: 10) {
                     ForEach(FeaturePick.topPicks) { pick in
                         FeatureCard(pick)
-                            .onTapGesture(perform: playSong)
+                            .onTapGesture(perform: {
+                                playSong(pick.firstSong)
+                            })
                     }
                 }
                 .padding(.horizontal, 20)
@@ -88,7 +90,7 @@ struct ListenNow: View {
         }
     }
 
-    var recentlyPlayed: some View {
+    var recentlyPlayedHScroller: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("Recently Played")
@@ -101,9 +103,11 @@ struct ListenNow: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(Album.recentlyPlayed) { album in
-                        AlbumCard(album)
-                            .onTapGesture(perform: playSong)
+                    ForEach(Playlist.recentlyPlayed, id: \.id) { item in
+                        AlbumCard(item)
+                            .onTapGesture(perform: {
+                                playSong(item)
+                            })
                     }
                 }
                 .padding(.horizontal, 20)
@@ -112,8 +116,8 @@ struct ListenNow: View {
         .padding(.vertical, 14)
     }
 
-    func playSong() {
-        audioPlayer.playSong(audioPlayer.currentSong == nil ? .example : nil)
+    func playSong(_ item: PlayableItem) {
+        audioPlayer.playSong(audioPlayer.currentSong == nil ? item.firstSong : nil)
     }
 }
 

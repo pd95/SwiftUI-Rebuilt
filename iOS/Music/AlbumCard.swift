@@ -12,10 +12,10 @@ struct AlbumCard: View {
     let subtitle: String
     let imageName: String
     
-    init(_ album: Album) {
-        title = album.title
-        subtitle = album.subtitle
-        imageName = album.imageName
+    init(_ item: PlayableItem) {
+        title = item.title
+        subtitle = item.subtitle
+        imageName = item.imageName
     }
 
     var body: some View {
@@ -23,7 +23,6 @@ struct AlbumCard: View {
             albumImage
             Text(title)
             Text(subtitle)
-                .font(.caption2)
                 .foregroundColor(.secondary)
         }
         .frame(width: 164)
@@ -41,10 +40,10 @@ struct AlbumCard: View {
 struct AlbumCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AlbumCard(Album.recentlyPlayed[0])
-            AlbumCard(Album.recentlyPlayed[1])
-            AlbumCard(Album.recentlyPlayed[2])
-            AlbumCard(Album.recentlyPlayed[3])
+            AlbumCard(Playlist.recentlyPlayed[0])
+            AlbumCard(Playlist.recentlyPlayed[1])
+            AlbumCard(Playlist.recentlyPlayed[2])
+            AlbumCard(Playlist.recentlyPlayed[3])
         }
         .padding()
         .previewLayout(.sizeThatFits)

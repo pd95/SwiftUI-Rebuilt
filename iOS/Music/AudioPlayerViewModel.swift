@@ -9,23 +9,27 @@ import SwiftUI
 
 class AudioPlayerViewModel: ObservableObject {
 
-    @Published private(set) var currentSong: PlayingSong?
-    @Published private(set) var playing: Bool
-    @Published var fullscreenPlayer: Bool
+    @Published private(set) var currentSong: Song? = nil
+    @Published private(set) var playing: Bool = false
+    @Published private(set) var position: Double = 0
+    @Published private(set) var audioLevel: Double = 1
+    @Published var fullscreenPlayer: Bool = false
     
-    init(song: PlayingSong? = nil, playing: Bool = false, fullscreenPlayer: Bool = false) {
+    
+    init(song: Song? = nil, playing: Bool = false, fullscreenPlayer: Bool = false) {
         _currentSong = Published(initialValue: song)
         _playing = Published(initialValue: playing)
         _fullscreenPlayer = Published(initialValue: fullscreenPlayer)
     }
     
-    func playSong(_ song: PlayingSong?) {
+    func playSong(_ song: Song?) {
         withAnimation {
             currentSong = song
             if song != nil {
                 fullscreenPlayer = false
             }
             playing = true
+            position = 0
         }
     }
     

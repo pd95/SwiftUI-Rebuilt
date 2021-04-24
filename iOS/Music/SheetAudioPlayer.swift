@@ -10,12 +10,10 @@ import SwiftUI
 struct SheetAudioPlayer: View {
     @EnvironmentObject var playerState: AudioPlayerViewModel
 
-    let currentlyPlaying: PlayingSong
+    let currentlyPlaying: Song
     
-
     var body: some View {
         VStack {
-
             Button(action: playerState.toggleMiniPlayer) {
                 Image(systemName: "minus")
                     .imageScale(.large)
@@ -34,9 +32,9 @@ struct SheetAudioPlayer: View {
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text(currentlyPlaying.song)
+                    Text(currentlyPlaying.title)
                         .font(.headline)
-                    Text(currentlyPlaying.singer)
+                    Text(currentlyPlaying.artist.title)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
