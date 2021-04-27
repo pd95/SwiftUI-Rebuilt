@@ -69,6 +69,7 @@
 		177AC27725FE3E6C007EAE49 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		178908CB261E00D900DA857E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		178908CF261E029C00DA857E /* SheetAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAudioPlayer.swift; sourceTree = "<group>"; };
+		17DD7DC926389B5A00C7C384 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				177AC25025FE3A49007EAE49 /* Info.plist */,
+				17DD7DC926389B5A00C7C384 /* Playground.playground */,
 				176865112603C86500ED195F /* Music */,
 			);
 			path = iOS;
