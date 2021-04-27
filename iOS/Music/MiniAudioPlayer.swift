@@ -40,6 +40,7 @@ struct MiniAudioPlayer: View {
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: 64)
+        .contentShape(Rectangle())
         .onTapGesture(perform: playerState.toggleMiniPlayer)
     }
 }
