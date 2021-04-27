@@ -16,18 +16,17 @@ struct AudioPlayer: View {
         if let currentSong = playerState.currentSong {
             MiniAudioPlayer(currentlyPlaying: currentSong)
                 .background(
-                    Color(.quaternarySystemFill)
-                        .background(VisualEffectView(effect: UIBlurEffect(style: .systemMaterial)))
-                        .edgesIgnoringSafeArea(.all)
-                        .onTapGesture(perform: toggleMiniPlayer)
+                    VisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
                 )
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .transition(.opacity)
                 .fullScreenCover(isPresented: $playerState.fullscreenPlayer, content: {
                     SheetAudioPlayer(currentlyPlaying: currentSong)
                         .background(
-                            Color(.quaternarySystemFill)
-                                .background(VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial)))
+                            Image(currentSong.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .overlay(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial)))
                                 .edgesIgnoringSafeArea(.all)
                                 .onTapGesture(perform: toggleMiniPlayer)
                         )
