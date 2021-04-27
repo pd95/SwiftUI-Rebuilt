@@ -29,6 +29,13 @@ extension Song {
     ]
 
     static let example: Song = mySongs.first!
+
+    static func mySong(for name: String) -> Self {
+        if Self.all.isEmpty {
+            let _ = mySongs
+        }
+        return song(for: name)!
+    }
 }
 
 extension Playlist {
