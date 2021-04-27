@@ -20,8 +20,6 @@ struct FeatureCard: View {
         text = pick.text
         color = pick.color
         imageName = pick.imageName
-        
-        print(self)
     }
     
     var body: some View {
