@@ -12,10 +12,24 @@ struct SheetAudioPlayer: View {
 
     let currentlyPlaying: Song
     
-    @State var position: Double = 0
+    var positionBinding: Binding<Double> {
+        .init(get: {
+            playerState.position
+        }, set: { newValue in
+            playerState.scrub(to: newValue)
+        })
+    }
     
     var positionRange: ClosedRange<Double> {
         0...(playerState.currentSong?.duration ?? 0)
+    }
+    
+    var audioLevelBinding: Binding<Double> {
+        .init(get: {
+            playerState.audioLevel
+        }, set: { newValue in
+            playerState.setVolume(to: newValue)
+        })
     }
     
     var body: some View {
@@ -58,11 +72,11 @@ struct SheetAudioPlayer: View {
 
                 // Position slider
                 VStack {
-                    Slider(value: $position, in: positionRange)
+                    Slider(value: positionBinding, in: positionRange)
                     HStack {
-                        Text(durationString(from: Int(position)))
+                        Text(durationString(from: Int(playerState.position)))
                         Spacer()
-                        Text(durationString(from: Int(position-currentlyPlaying.duration)))
+                        Text(durationString(from: Int(playerState.position-currentlyPlaying.duration)))
                     }
                 }
 
@@ -94,7 +108,7 @@ struct SheetAudioPlayer: View {
 
                 // Volume slider
                 VStack {
-                    Slider(value: $playerState.audioLevel, in: 0.0...1.0, minimumValueLabel: Image(systemName: "speaker.fill"), maximumValueLabel: Image(systemName: "speaker.wave.3.fill"), label: { EmptyView() })
+                    Slider(value: audioLevelBinding, in: 0.0...1.0, minimumValueLabel: Image(systemName: "speaker.fill"), maximumValueLabel: Image(systemName: "speaker.wave.3.fill"), label: { EmptyView() })
                 }
                 .imageScale(.small)
 
