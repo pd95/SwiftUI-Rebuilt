@@ -12,7 +12,7 @@ class AudioPlayerViewModel: ObservableObject {
     @Published private(set) var currentSong: Song? = nil
     @Published private(set) var playing: Bool = false
     @Published private(set) var position: Double = 0
-    @Published private(set) var audioLevel: Double = 1
+    @Published var audioLevel: Double = 0.42
     @Published var fullscreenPlayer: Bool = false
     
     
