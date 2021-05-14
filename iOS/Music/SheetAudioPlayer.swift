@@ -44,6 +44,9 @@ struct SheetAudioPlayer: View {
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                .frame(width: playerState.playing ? nil : CGFloat(235), height: playerState.playing ? nil : CGFloat(235))
+                .animation(.easeInOut)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
                 .shadow(radius: 20)
 

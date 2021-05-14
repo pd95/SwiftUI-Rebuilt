@@ -126,7 +126,9 @@ struct ListenNow: View {
     }
 
     func playSong(_ item: PlayableItem) {
-        audioPlayer.playSong(audioPlayer.currentSong != item.firstSong ? item.firstSong : nil)
+        if audioPlayer.currentSong != item.firstSong {
+            audioPlayer.playSong(item.firstSong)
+        }
     }
 }
 

@@ -22,6 +22,7 @@ struct MiniAudioPlayer: View {
 
             Text(playerState.currentSongTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .animation(nil)
 
             AudioPlayerButton(symbol: playerState.playPauseSymbol,
                               action: playerState.togglePlayPause)
