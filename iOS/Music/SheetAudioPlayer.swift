@@ -122,9 +122,16 @@ struct SheetAudioPlayer: View {
         }
         .accentColor(.primary)
         .padding(.horizontal)
+        .background(
+            Image(playerState.currentSongImageName)
+                .resizable()
+                .scaledToFill()
+                .overlay(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial)))
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture(perform: playerState.toggleMiniPlayer)
+        )
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
 }
 
 struct SheetAudioPlayer_Previews: PreviewProvider {

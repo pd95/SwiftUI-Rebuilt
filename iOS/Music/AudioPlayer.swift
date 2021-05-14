@@ -14,29 +14,12 @@ struct AudioPlayer: View {
 
     var body: some View {
         MiniAudioPlayer()
-            .background(
-                VisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
-            )
             .frame(maxHeight: .infinity, alignment: .bottom)
             .transition(.opacity)
             .fullScreenCover(isPresented: $playerState.fullscreenPlayer, content: {
                     SheetAudioPlayer()
-                        .background(
-                            Image(playerState.currentSong?.imageName ?? "albumPlaceholder")
-                                .resizable()
-                                .scaledToFill()
-                                .overlay(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial)))
-                                .edgesIgnoringSafeArea(.all)
-                                .onTapGesture(perform: toggleMiniPlayer)
-                        )
                         .environmentObject(playerState)
                 })
-    }
-
-    func toggleMiniPlayer() {
-        withAnimation {
-            playerState.toggleMiniPlayer()
-        }
     }
 }
 

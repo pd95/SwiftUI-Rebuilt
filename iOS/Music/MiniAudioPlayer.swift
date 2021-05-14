@@ -36,6 +36,9 @@ struct MiniAudioPlayer: View {
         .frame(maxWidth: .infinity, maxHeight: 64)
         .contentShape(Rectangle())
         .onTapGesture(perform: playerState.toggleMiniPlayer)
+        .background(
+            VisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
+        )
     }
 }
 
