@@ -51,7 +51,19 @@ class AudioPlayerViewModel: ObservableObject {
     var currentSongSubtitle: String {
         currentSong?.artist.title ?? ""
     }
+    
+    var playPauseSymbol: SFSymbol {
+        playing ? .pause : .play
+    }
 
+    var hasPrevious: Bool {
+        false
+    }
+    
+    var hasNext: Bool {
+        false
+    }
+    
     var positionString: String {
         durationString(from: Int(position))
     }

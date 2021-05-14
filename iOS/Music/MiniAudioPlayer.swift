@@ -23,18 +23,13 @@ struct MiniAudioPlayer: View {
             Text(playerState.currentSongTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: playerState.togglePlayPause) {
-                Image(systemName: playerState.playing ? "pause.fill" : "play.fill")
-                    .renderingMode(.original)
-                    .imageScale(.large)
-                    .frame(minWidth: 40, minHeight: 40)
-            }
-            Button(action: {}) {
-                Image(systemName: "forward.fill")
-                    .renderingMode(.original)
-                    .imageScale(.large)
-                    .frame(minWidth: 40, minHeight: 40)
-            }
+            AudioPlayerButton(symbol: playerState.playPauseSymbol,
+                              action: playerState.togglePlayPause)
+                .imageScale(.large)
+
+            AudioPlayerButton(symbol: .forward, action: {})
+                .imageScale(.large)
+                .disabled(!playerState.hasNext)
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: 64)

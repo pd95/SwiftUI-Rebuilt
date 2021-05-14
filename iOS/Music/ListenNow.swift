@@ -33,7 +33,7 @@ struct ListenNow: View {
                         Spacer()
 
                         Button(action: {}, label: {
-                            Image(systemName: "person.crop.circle")
+                            SFSymbol.user.image
                                 .imageScale(.large)
                                 .font(Font.title.weight(.medium))
                         })

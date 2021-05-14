@@ -58,13 +58,10 @@ struct SheetAudioPlayer: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Button(action: {}) {
-                        Image(systemName: "ellipsis.circle.fill")
-                            .font(.title)
-                            .frame(minWidth: 40, minHeight: 40)
-                    }
-                    .foregroundColor(.secondary)
-                    .opacity(playerState.currentSong == nil ? 0 : 1)
+                    AudioPlayerButton(symbol: .ellipsis, action: {})
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                        .opacity(playerState.currentSong == nil ? 0 : 1)
                 }
 
                 Spacer()
@@ -82,24 +79,17 @@ struct SheetAudioPlayer: View {
                 Spacer()
 
                 // Position slider
-                HStack(spacing: 60) {
-                    Button(action: {}) {
-                        Image(systemName: "backward.fill")
-                            .frame(minWidth: 40, minHeight: 40)
-                            .font(.title)
-                    }
+                HStack(spacing: 50) {
+                    AudioPlayerButton(symbol: .backward, action: {})
+                        .font(.title2)
+                        .disabled(!playerState.hasPrevious)
                     
-                    Button(action: playerState.togglePlayPause) {
-                        Image(systemName: playerState.playing ? "pause.fill" : "play.fill")
-                            .frame(minWidth: 50, minHeight: 50)
-                            .aspectRatio(contentMode: .fill)
-                            .font(.largeTitle)
-                    }
-                    Button(action: {}) {
-                        Image(systemName: "forward.fill")
-                            .frame(minWidth: 40, minHeight: 40)
-                            .font(.title)
-                    }
+                    AudioPlayerButton(symbol: playerState.playPauseSymbol, action: playerState.togglePlayPause)
+                        .font(.largeTitle)
+                    
+                    AudioPlayerButton(symbol: .forward, action: {})
+                        .font(.title2)
+                        .disabled(!playerState.hasNext)
                 }
                 .imageScale(.large)
 
@@ -107,7 +97,10 @@ struct SheetAudioPlayer: View {
 
                 // Volume slider
                 VStack {
-                    Slider(value: audioLevelBinding, in: 0.0...1.0, minimumValueLabel: Image(systemName: "speaker.fill"), maximumValueLabel: Image(systemName: "speaker.wave.3.fill"), label: { EmptyView() })
+                    Slider(value: audioLevelBinding, in: 0.0...1.0,
+                           minimumValueLabel: SFSymbol.volumeLow.image,
+                           maximumValueLabel: SFSymbol.volumeHigh.image,
+                           label: { EmptyView() })
                 }
                 .imageScale(.small)
 
@@ -115,18 +108,9 @@ struct SheetAudioPlayer: View {
                 
                 // Mode buttons
                 HStack(spacing: 60) {
-                    Button(action: {}, label: {
-                        Image(systemName: "quote.bubble")
-                            .frame(minWidth: 40, minHeight: 40)
-                    })
-                    Button(action: {}, label: {
-                        Image(systemName: "airplayaudio")
-                            .frame(minWidth: 40, minHeight: 40)
-                    })
-                    Button(action: {}, label: {
-                        Image(systemName: "list.bullet")
-                            .frame(minWidth: 40, minHeight: 40)
-                    })
+                    AudioPlayerButton(symbol: .songText, action: {})
+                    AudioPlayerButton(symbol: .airplay, action: {})
+                    AudioPlayerButton(symbol: .playlist, action: {})
                 }
                 .imageScale(.large)
                 .font(.headline)

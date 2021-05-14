@@ -34,7 +34,6 @@ struct AudioPlayer: View {
     }
 
     func toggleMiniPlayer() {
-        print("toggleMiniPlayer")
         withAnimation {
             playerState.toggleMiniPlayer()
         }
