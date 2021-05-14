@@ -16,6 +16,10 @@ class AudioPlayerViewModel: ObservableObject {
     @Published private(set) var audioLevel: Double = 0.42
     @Published var fullscreenPlayer: Bool = false
     
+    var timeLeft: Double {
+        position - (currentSong?.duration ?? 0)
+    }
+    
     var cancellable: AnyCancellable?
     
     init(song: Song? = nil, playing: Bool = false, fullscreenPlayer: Bool = false) {

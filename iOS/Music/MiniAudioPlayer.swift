@@ -10,11 +10,9 @@ import SwiftUI
 struct MiniAudioPlayer: View {
     @EnvironmentObject var playerState: AudioPlayerViewModel
 
-    let currentlyPlaying: Song
-    
     var body: some View {
         HStack {
-            Image(currentlyPlaying.imageName)
+            Image(playerState.currentSong?.imageName ?? "albumPlaceholder")
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -22,7 +20,7 @@ struct MiniAudioPlayer: View {
                 .padding(.leading, 4)
                 .padding(.trailing, 6)
 
-            Text(currentlyPlaying.title)
+            Text(playerState.currentSong?.title ?? "Not Playing")
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             Button(action: playerState.togglePlayPause) {
@@ -47,7 +45,7 @@ struct MiniAudioPlayer: View {
 
 struct MiniAudioPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MiniAudioPlayer(currentlyPlaying: .example)
+        MiniAudioPlayer()
             .environmentObject(AudioPlayerViewModel(song: .example, fullscreenPlayer: false))
     }
 }

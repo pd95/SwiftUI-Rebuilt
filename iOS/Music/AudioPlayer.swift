@@ -13,17 +13,16 @@ struct AudioPlayer: View {
     @Namespace var namespace
 
     var body: some View {
-        if let currentSong = playerState.currentSong {
-            MiniAudioPlayer(currentlyPlaying: currentSong)
-                .background(
-                    VisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
-                )
-                .frame(maxHeight: .infinity, alignment: .bottom)
-                .transition(.opacity)
-                .fullScreenCover(isPresented: $playerState.fullscreenPlayer, content: {
-                    SheetAudioPlayer(currentlyPlaying: currentSong)
+        MiniAudioPlayer()
+            .background(
+                VisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
+            )
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .transition(.opacity)
+            .fullScreenCover(isPresented: $playerState.fullscreenPlayer, content: {
+                    SheetAudioPlayer()
                         .background(
-                            Image(currentSong.imageName)
+                            Image(playerState.currentSong?.imageName ?? "albumPlaceholder")
                                 .resizable()
                                 .scaledToFill()
                                 .overlay(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial)))
@@ -32,7 +31,6 @@ struct AudioPlayer: View {
                         )
                         .environmentObject(playerState)
                 })
-        }
     }
 
     func toggleMiniPlayer() {
