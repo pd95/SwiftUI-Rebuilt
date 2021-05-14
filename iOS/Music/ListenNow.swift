@@ -49,7 +49,8 @@ struct ListenNow: View {
                     .padding(.bottom, 2)
 
                     topPicksHScroller
-                    
+                        .padding(.bottom, 14)
+
                     playableItemHScroller(title: "Recently Played", items: Playlist.recentlyPlayed)
 
                     // List of albums for each genre

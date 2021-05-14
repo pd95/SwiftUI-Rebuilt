@@ -10,6 +10,7 @@ There are screens going to be build for macOS and iOS. But not necessarily for b
 ## iOS Music App UI clone
 
 - "Listen Now" screen clone with "Top Picks" and "Recently Played"
-- No interaction except scrolling
+- Basic interactions to trigger mini and fullscreen sheet player
 
 !["Listen Now" screen](iOS/Music/Screencasts/RocketSim4_iPhone_Listen_Now.gif)
+!["Listen Now" with player](iOS/Music/Screencasts/RocketSim_iPhone_Listen_Now-2.gif)
