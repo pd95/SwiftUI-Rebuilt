@@ -40,7 +40,7 @@ struct SheetAudioPlayer: View {
                     .foregroundColor(.secondary)
             }
 
-            Image(playerState.currentSong?.imageName ?? "albumPlaceholder")
+            Image(playerState.currentSongImageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -52,9 +52,9 @@ struct SheetAudioPlayer: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(playerState.currentSong?.title ?? "Not Playing")
+                        Text(playerState.currentSongTitle)
                             .font(.headline)
-                        Text(playerState.currentSong?.artist.title ?? "")
+                        Text(playerState.currentSongSubtitle)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -73,9 +73,9 @@ struct SheetAudioPlayer: View {
                 VStack {
                     Slider(value: positionBinding, in: positionRange)
                     HStack {
-                        Text(durationString(from: Int(playerState.position)))
+                        Text(playerState.positionString)
                         Spacer()
-                        Text(durationString(from: Int(playerState.timeLeft)))
+                        Text(playerState.timeLeftString)
                     }
                 }
 
@@ -138,31 +138,10 @@ struct SheetAudioPlayer: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    func durationString(from interval: Int) -> String {
-        if playerState.currentSong == nil {
-            return "--:--"
-        }
-        if interval == 0 {
-            return "0:00"
-        }
-        
-        var string = interval < 0 ? "-" : ""
-        let absInterval = abs(interval)
-        let seconds = absInterval % 60
-        let minutes = Int(absInterval / 60)
-
-        string += String(minutes)
-        string += ":"
-        if seconds < 10 {
-            string += "0"
-        }
-        string += String(seconds)
-        return string
-    }
 }
 
 struct SheetAudioPlayer_Previews: PreviewProvider {
-    static let song: Song = Song.mySong(for: "Photograph")
+    static let song: Song? = Song.mySong(for: "Photograph")
     static var previews: some View {
         SheetAudioPlayer()
             .environmentObject(AudioPlayerViewModel(song: song, fullscreenPlayer: true))

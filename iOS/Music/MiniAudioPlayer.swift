@@ -12,7 +12,7 @@ struct MiniAudioPlayer: View {
 
     var body: some View {
         HStack {
-            Image(playerState.currentSong?.imageName ?? "albumPlaceholder")
+            Image(playerState.currentSongImageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -20,7 +20,7 @@ struct MiniAudioPlayer: View {
                 .padding(.leading, 4)
                 .padding(.trailing, 6)
 
-            Text(playerState.currentSong?.title ?? "Not Playing")
+            Text(playerState.currentSongTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             Button(action: playerState.togglePlayPause) {

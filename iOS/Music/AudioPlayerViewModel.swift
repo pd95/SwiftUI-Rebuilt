@@ -16,10 +16,6 @@ class AudioPlayerViewModel: ObservableObject {
     @Published private(set) var audioLevel: Double = 0.42
     @Published var fullscreenPlayer: Bool = false
     
-    var timeLeft: Double {
-        position - (currentSong?.duration ?? 0)
-    }
-    
     var cancellable: AnyCancellable?
     
     init(song: Song? = nil, playing: Bool = false, fullscreenPlayer: Bool = false) {
@@ -42,6 +38,31 @@ class AudioPlayerViewModel: ObservableObject {
             }
     }
     
+    // MARK: View state information
+    
+    var currentSongImageName: String {
+        currentSong?.imageName ?? "albumPlaceholder"
+    }
+
+    var currentSongTitle: String {
+        currentSong?.title ?? "Not Playing"
+    }
+
+    var currentSongSubtitle: String {
+        currentSong?.artist.title ?? ""
+    }
+
+    var positionString: String {
+        durationString(from: Int(position))
+    }
+    
+    var timeLeftString: String {
+        durationString(from: Int(position - (currentSong?.duration ?? 0)))
+    }
+
+    // MARK: - Handle interactions
+    
+    // Request playing this song
     func playSong(_ song: Song?) {
         withAnimation {
             currentSong = song
@@ -69,5 +90,28 @@ class AudioPlayerViewModel: ObservableObject {
     
     func setVolume(to value: Double) {
         audioLevel = value
+    }
+
+    // MARK: - Private helper methods interactions
+    private func durationString(from interval: Int) -> String {
+        if currentSong == nil {
+            return "--:--"
+        }
+        if interval == 0 {
+            return "0:00"
+        }
+        
+        var string = interval < 0 ? "-" : ""
+        let absInterval = abs(interval)
+        let seconds = absInterval % 60
+        let minutes = Int(absInterval / 60)
+
+        string += String(minutes)
+        string += ":"
+        if seconds < 10 {
+            string += "0"
+        }
+        string += String(seconds)
+        return string
     }
 }
