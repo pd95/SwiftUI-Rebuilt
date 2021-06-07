@@ -10,28 +10,40 @@ import CoreData
 
 struct ContentView: View {
     
-    enum PrototypeUI {
+    enum PrototypeUI: Int {
+        case none
         case musicApp
+        case mailApp
     }
     
-    @State private var currentUI: PrototypeUI? = .musicApp
+    @SceneStorage("currentUI") private var currentUI: PrototypeUI = .none
     
     var body: some View {
         Group {
             switch currentUI {
             case .musicApp:
-                MusicApp(dismiss: { currentUI = nil })
+                MusicApp(dismiss: { currentUI = .none })
+            case .mailApp:
+                MailApp(dismiss: { currentUI = .none })
             default:
                 VStack {
                     Text("Choose an app/UI:")
                         .font(.title)
                     
-                    HStack {
-                        Button("Music App") {
+                    VStack {
+                        Button(action: {
                             currentUI = .musicApp
+                        }) {
+                            Label("Music App", systemImage: "music.note")
+                                .padding()
+                        }
+                        Button(action: {
+                            currentUI = .mailApp
+                        }) {
+                            Label("Mail App", systemImage: "envelope")
+                                .padding()
                         }
                     }
-                    .padding()
                 }
                 .padding()
                 .navigationTitle("Rebuilt UIs")

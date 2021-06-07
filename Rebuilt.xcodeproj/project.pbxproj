@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170A0FFB266DFC880058AE75 /* MailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A0FFA266DFBEC0058AE75 /* MailApp.swift */; };
 		173520B1261CE04600889AA7 /* MiniAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */; };
 		173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520B4261CF3D400889AA7 /* VisualEffectView.swift */; };
 		173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173520BE261D067E00889AA7 /* View+OS-Modifier.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170A0FFA266DFBEC0058AE75 /* MailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailApp.swift; sourceTree = "<group>"; };
 		173520B0261CE04600889AA7 /* MiniAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAudioPlayer.swift; sourceTree = "<group>"; };
 		173520B4261CF3D400889AA7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		173520B8261CF73700889AA7 /* MusicAppExampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppExampleData.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170A0FF9266DFBD50058AE75 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				170A0FFA266DFBEC0058AE75 /* MailApp.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
 		17374B4E263497F400102DF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 			children = (
 				177AC25025FE3A49007EAE49 /* Info.plist */,
 				17DD7DC926389B5A00C7C384 /* Playground.playground */,
+				170A0FF9266DFBD50058AE75 /* Mail */,
 				176865112603C86500ED195F /* Music */,
 			);
 			path = iOS;
@@ -296,6 +307,7 @@
 				17374B6426349E8600102DF9 /* PlayableItem.swift in Sources */,
 				173520B5261CF3D400889AA7 /* VisualEffectView.swift in Sources */,
 				1768652E2603E7C700ED195F /* AlbumCard.swift in Sources */,
+				170A0FFB266DFC880058AE75 /* MailApp.swift in Sources */,
 				173520BF261D067E00889AA7 /* View+OS-Modifier.swift in Sources */,
 				177AC25B25FE3A49007EAE49 /* RebuiltApp.swift in Sources */,
 				176865322603F26600ED195F /* ListenNow.swift in Sources */,
